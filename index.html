@@ -4,98 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tinkuy Ñawi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
+
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #111;
     }
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #7a00ff, #00d4ff);
+    /* NAV ESTILO APPLE */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
+      padding: 0 40px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      z-index: 100;
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .btn {
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: white;
-      color: #7a00ff;
-      border-radius: 8px;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #e1e1e1;
-    }
-
-    /* SECCION IA */
-    .agente {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .agente h2 {
-      font-size: 2.3rem;
-      margin-bottom: 20px;
-    }
-
-    #ia {
-      margin-top: 30px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>Tinkuy Ñawi</h1>
-      <p>Una experiencia moderna y conectada, potenciada con inteligencia artificial.</p>
-      <a href="#ia"><button class="btn">Hablar con la IA</button></a>
-    </div>
-  </section>
-
-  <!-- IA -->
-  <section class="agente" id="ia">
-    <h2>Asistente Inteligente</h2>
-    <p>Interactúa con tu agente IA directamente desde esta página.</p>
-
-    <!-- INSERTA AQUÍ TU SCRIPT DE AGENTE -->
-    <!-- SOLO CAMBIA EL agentId -->
-    
-    <script>
-      window.chtlConfig = {
-          agentId: "TU_AGENT_ID_AQUI",
-          apiBaseUrl: "https://api.promptscript.dev"
-      };
-    </script>
-    <script async src="https://widget.promptscript.dev/chat-widget.js"></script>
-
-  </section>
-
-</body>
-</html>
+    n
