@@ -1,1 +1,0 @@
-# tinkuy--awi
