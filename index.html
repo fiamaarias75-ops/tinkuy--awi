@@ -1,267 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tinkuy Ñawi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinkuy Ñawi – Turismo con IA</title>
 
-  <style>
+    <!-- Estilo Apple Clean -->
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #111;
+            background: #fff;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #111;
-    }
+        header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
 
-    /* NAV ESTILO APPLE */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 40px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      z-index: 100;
-    }
+        header h1 {
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
 
-    nav a {
-      text-decoration: none;
-      font-size: 0.95rem;
-      color: #333;
-      margin-left: 20px;
-      transition: 0.2s;
-    }
+        .hero {
+            margin-top: 80px;
+            height: 90vh;
+            background-image: url("https://images.unsplash.com/photo-1543832923-9f4d6a8f8f43");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
 
-    nav a:hover {
-      color: #6b00ff;
-    }
+        .hero h2 {
+            font-size: 56px;
+            max-width: 600px;
+        }
 
-    /* HERO FULL APPLE */
-    .hero {
-      height: 100vh;
-      background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      color: white;
-    }
+        .hero p {
+            font-size: 22px;
+            max-width: 600px;
+            margin-top: 10px;
+        }
 
-    .hero h1 {
-      font-size: 4.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+        .section {
+            padding: 80px 60px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    .hero p {
-      font-size: 1.4rem;
-      max-width: 700px;
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    .btn {
-      padding: 12px 30px;
-      background: rgba(255,255,255,0.9);
-      border-radius: 12px;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: #111;
-      transition: .3s;
-    }
+        .text-block {
+            font-size: 20px;
+            line-height: 1.7;
+            text-align: justify;
+        }
 
-    .btn:hover {
-      background: white;
-    }
+        .img-wide {
+            width: 100%;
+            border-radius: 22px;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
 
-    section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        .bubble {
+            background: #f5f5f7;
+            padding: 30px;
+            border-radius: 22px;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
 
-    h2 {
-      text-align: center;
-      font-size: 2.8rem;
-      color: #111;
-      margin-bottom: 30px;
-    }
+        .button {
+            margin-top: 35px;
+            padding: 16px 28px;
+            background: black;
+            color: white;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
 
-    p, li {
-      font-size: 1.2rem;
-      line-height: 1.7;
-    }
-
-    /* SECCION CON IMAGEN TIPO APPLE */
-    .block {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 80px;
-      align-items: center;
-    }
-
-    .block img {
-      width: 100%;
-      max-width: 550px;
-      border-radius: 20px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-    }
-
-    .block .text {
-      flex: 1;
-      padding: 20px 40px;
-    }
-
-    /* CUADRO IA */
-    .ia-box {
-      background: #f5f5f7;
-      padding: 50px;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-
-  </style>
+        .button:hover {
+            background: #333;
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <strong style="font-size:1.3rem;">Tinkuy Ñawi</strong>
-    <div>
-      <a href="#quienes">Quiénes Somos</a>
-      <a href="#ofrece">Servicios IA</a>
-      <a href="#mision">Misión</a>
-      <a href="#vision">Visión</a>
-      <a href="#objetivos">Objetivos</a>
-      <a href="#ia">Agente IA</a>
-    </div>
-  </nav>
+    <header>
+        <h1>TINKUY ÑAWI</h1>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Tinkuy Ñawi</h1>
-    <p>La nueva forma inteligente, minimalista y moderna de planificar tu viaje a Paracas.</p>
-    <a href="#ia"><button class="btn">Comenzar</button></a>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+        <h2>La nueva forma de vivir Paracas.</h2>
+        <p>Turismo inteligente, rápido y personalizado. Todo desde una sola plataforma.</p>
+    </section>
 
-  <!-- QUIENES SOMOS -->
-  <section id="quienes">
-    <h2>Quiénes Somos</h2>
+    <!-- QUIÉNES SOMOS -->
+    <section class="section">
+        <h2 class="section-title">Quiénes Somos</h2>
 
-    <div class="block">
-      <div class="text">
-        <p>
-          Somos una empresa creada en Paracas dedicada a transformar la experiencia turística mediante 
-          soluciones inteligentes, simples y modernas.
+        <img class="img-wide" src="https://images.unsplash.com/photo-1526666923127-b2970f64b422" alt="Paracas">
+
+        <p class="text-block">
+            Somos una empresa creada en la ciudad de Paracas, dedicada a desarrollar soluciones innovadoras que mejoren la experiencia turística.
+            Nuestro proyecto principal es un agente de inteligencia artificial capaz de ayudarte a planificar tu visita automáticamente
+            según tu presupuesto y tus intereses.
         </p>
-        <p>
-          Estamos desarrollando un agente de inteligencia artificial que planifica tu viaje automáticamente 
-          según tu presupuesto, ofreciéndote itinerarios, restaurantes, tours y hoteles ideales para ti.
+    </section>
+
+    <!-- EL AGENTE IA -->
+    <section class="section">
+        <h2 class="section-title">¿Qué ofrece nuestro agente IA?</h2>
+
+        <div class="bubble">🕒 Itinerario automático con tiempos reales de recorrido en Paracas.</div>
+        <div class="bubble">🍤 Recomendaciones de comida según precio y tipo de cocina.</div>
+        <div class="bubble">🏨 Hoteles adaptados a tu presupuesto.</div>
+        <div class="bubble">⛵ Tours turísticos y experiencias disponibles.</div>
+        <div class="bubble">🎯 Un plan totalmente personalizado en segundos.</div>
+
+        <a class="button" href="#" id="openAssistant">Abrir Asistente Inteligente</a>
+    </section>
+
+    <!-- MISIÓN -->
+    <section class="section">
+        <h2 class="section-title">Misión</h2>
+        <p class="text-block">
+            Ofrecer una herramienta inteligente que facilite la planificación del viaje en Paracas,
+            brindando información clara, confiable y personalizada para una experiencia completa, organizada y accesible.
         </p>
-      </div>
+    </section>
 
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80">
-    </div>
-  </section>
-
-  <!-- QUE OFRECE -->
-  <section id="ofrece">
-    <h2>¿Qué ofrece nuestro Agente IA?</h2>
-
-    <div class="block">
-      <img src="https://images.unsplash.com/photo-1500048993959-dc63a077254d?auto=format&fit=crop&w=1500&q=80">
-
-      <div class="text">
-        <ul>
-          <li><strong>Itinerario automático:</strong> rutas y tiempos para recorrer Paracas.</li>
-          <li><strong>Restaurantes recomendados:</strong> marinos, criollos y veganos.</li>
-          <li><strong>Hoteles según presupuesto:</strong> desde eco-lodges hasta 4 estrellas.</li>
-          <li><strong>Tours destacados:</strong> actividades ideales según temporada.</li>
-          <li><strong>Plan personalizado:</strong> responde en segundos y se adapta al usuario.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISION -->
-  <section id="mision">
-    <h2>Misión</h2>
-
-    <div class="block">
-      <div class="text">
-        <p>
-          Facilitar la planificación turística con una herramienta inteligente que brinde información clara,
-          confiable y personalizada para disfrutar una experiencia accesible y completa en Paracas.
+    <!-- VISIÓN -->
+    <section class="section">
+        <h2 class="section-title">Visión</h2>
+        <p class="text-block">
+            Ser la plataforma líder de asistencia turística con IA en el Perú, impulsando un turismo moderno e intuitivo en Paracas
+            y otras regiones del país.
         </p>
-      </div>
+    </section>
 
-      <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1500&q=80">
-    </div>
-  </section>
+    <!-- OBJETIVOS -->
+    <section class="section">
+        <h2 class="section-title">Objetivos</h2>
 
-  <!-- VISION -->
-  <section id="vision">
-    <h2>Visión</h2>
+        <div class="bubble">✔ Automatizar la planificación turística con IA accesible.</div>
+        <div class="bubble">✔ Proveer información actualizada de rutas, hoteles, precios y actividades.</div>
+        <div class="bubble">✔ Optimizar la experiencia con recomendaciones precisas según presupuesto.</div>
+        <div class="bubble">✔ Impulsar el turismo local con tecnología moderna.</div>
+        <div class="bubble">✔ Ampliar el sistema para incluir más destinos del Perú.</div>
+    </section>
 
-    <div class="block">
-      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1500&q=80">
-
-      <div class="text">
-        <p>
-          Ser la plataforma líder de asistencia turística con IA en el Perú, promoviendo un turismo moderno,
-          responsable e intuitivo, expandiéndonos a más regiones del país.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- OBJETIVOS -->
-  <section id="objetivos">
-    <h2>Objetivos</h2>
-
-    <ul style="max-width:800px;margin:auto;font-size:1.2rem;">
-      <li>Automatizar la planificación turística con IA.</li>
-      <li>Ofrecer información actualizada sobre precios, rutas, hoteles y tours.</li>
-      <li>Optimizar la experiencia del visitante ajustándose a su presupuesto.</li>
-      <li>Promover el turismo local destacando lo mejor de Paracas.</li>
-      <li>Innovar constantemente para incluir nuevos destinos.</li>
-    </ul>
-  </section>
-
-  <!-- AGENTE IA -->
-  <section id="ia">
-    <h2>Asistente IA</h2>
-
-    <div class="ia-box">
-      <p>Habla con nuestro agente y recibe tu plan de viaje automático.</p>
-
-      <script>
-        window.chtlConfig = {
-            agentId: "TU_AGENT_ID_AQUI",
-            apiBaseUrl: "https://api.promptscript.dev"
+    <!-- Script para conectar tu asistente IA -->
+    <script>
+        document.getElementById("openAssistant").onclick = () => {
+            alert("Aquí irá tu asistente IA cuando lo integremos 😊");
         };
-      </script>
-
-      <script async src="https://widget.promptscript.dev/chat-widget.js"></script>
-    </div>
-  </section>
+    </script>
 
 </body>
 </html>
