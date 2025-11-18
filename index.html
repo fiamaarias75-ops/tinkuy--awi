@@ -1,303 +1,227 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tinkuy Ñawi – Turismo Inteligente</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tinkuy Ñawi - Turismo Inteligente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset pequeño */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #333;
+      margin: 0;
+      font-family: "Inter", sans-serif;
       background: #f9f9f9;
+      color: #222;
     }
 
     header {
-      padding: 20px 40px;
       background: white;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #e5e5e5;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
 
     header h1 {
-      font-size: 1.8rem;
-      font-weight: 600;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #5e00ff;
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
     .hero {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      height: 80vh;
-      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 0 20px;
+      padding: 80px 60px;
+      background: linear-gradient(to bottom, #fafafa, #f0f0f0);
     }
 
-    .hero .content {
-      max-width: 700px;
+    .hero-text {
+      width: 50%;
+      animation: fadeIn 1s ease;
     }
 
-    .hero h2 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
+    .hero-text h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 700;
     }
 
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 30px;
-      font-weight: 300;
+    .hero-text p {
+      font-size: 18px;
+      color: #444;
     }
 
-    .hero .btn {
-      padding: 12px 28px;
-      background: white;
-      color: #5e00ff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .hero .btn:hover {
-      background: #f0f0f0;
+    .hero img {
+      width: 45%;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     }
 
     section {
-      padding: 80px 40px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 70px 60px;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #5e00ff;
+    h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      align-items: start;
-    }
-
-    .grid .card {
+    .card {
       background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      height: 200px;
-    }
-
-    .card .card-content {
-      padding: 20px;
-      flex: 1;
-    }
-
-    .card .card-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: #222;
-    }
-
-    .card .card-content p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .ia-box {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-      text-align: center;
-    }
-
-    .ia-box h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    .ia-box p {
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      color: #555;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
-      background: #f1f1f1;
-      color: #666;
-      font-size: 0.95rem;
+      padding: 40px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* Chat IA */
+    #chatContainer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 330px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeUp 0.6s ease;
+    }
+
+    #chatBox {
+      height: 270px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding-right: 5px;
+    }
+
+    #chatContainer input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    #chatContainer button {
+      padding: 10px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Tinkuy Ñawi</h1>
-    <nav>
-      <a href="#quienes">Quiénes Somos</a>
-      <a href="#ofertas">Qué Ofrecemos</a>
-      <a href="#ia">Agente IA</a>
-      <a href="#mision">Misión</a>
-      <a href="#vision">Visión</a>
-      <a href="#objetivos">Objetivos</a>
-    </nav>
-  </header>
+<header>
+  <h1>Tinkuy Ñawi</h1>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="content">
-      <h2>Turismo inteligente desde Paracas</h2>
-      <p>Planifica tu viaje con una IA que te recomienda itinerarios, tours, restaurantes y más, según tu presupuesto.</p>
-      <button class="btn" onclick="document.getElementById('ia').scrollIntoView({ behavior: 'smooth' })">Habla con la IA</button>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Turismo Inteligente en Paracas</h2>
+    <p>Planifica tu viaje como nunca antes. Con ayuda de nuestro agente IA, obtén itinerarios, recomendaciones y rutas en segundos.</p>
+  </div>
 
-  <!-- QUIÉNES SOMOS -->
-  <section id="quienes">
-    <h2 class="section-title">Quiénes Somos</h2>
-    <p>
-      Somos una empresa establecida en Paracas con la misión de transformar la experiencia turística
-      mediante la inteligencia artificial. Tinkuy Ñawi combina tecnología y turismo para ofrecer
-      soluciones personalizadas y modernas.
-    </p>
-  </section>
+  <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80">
+</section>
 
-  <!-- QUÉ OFRECEMOS -->
-  <section id="ofertas">
-    <h2 class="section-title">¿Qué ofrece nuestro Agente IA?</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1541976076758-404ebb1a1a68?auto=format&fit=crop&w=800&q=80" alt="Itinerario">
-        <div class="card-content">
-          <h3>Itinerario Automático</h3>
-          <p>Te generamos un plan de viaje con tiempos estimados para cada lugar que visitarás en Paracas.</p>
-        </div>
-      </div>
+<section>
+  <h3>Quiénes Somos</h3>
+  <div class="card">
+    Somos una empresa creada en Paracas, dedicada a desarrollar soluciones innovadoras para mejorar la experiencia turística.  
+    Nuestro agente IA crea planes completos según tu presupuesto: itinerarios, restaurantes, rutas, tiempos y recomendaciones reales.
+  </div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80" alt="Comida">
-        <div class="card-content">
-          <h3>Recomendaciones Gastronómicas</h3>
-          <p>Te sugerimos restaurantes marinos, criollos o veganos según tu presupuesto.</p>
-        </div>
-      </div>
+  <h3>¿Qué ofrece nuestro Agente IA?</h3>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Hoteles">
-        <div class="card-content">
-          <h3>Hoteles Personalizados</h3>
-          <p>Albergues, hoteles boutique o de lujo: según lo que prefieras y puedas gastar.</p>
-        </div>
-      </div>
+  <div class="card">✔ Itinerario automático con tiempos reales</div>
+  <div class="card">✔ Recomendaciones de comida (marina, criolla, vegana)</div>
+  <div class="card">✔ Hoteles según presupuesto</div>
+  <div class="card">✔ Tours y experiencias en Paracas</div>
+  <div class="card">✔ Plan 100% personalizado</div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Tours">
-        <div class="card-content">
-          <h3>Tours y Experiencias</h3>
-          <p>Te proponemos tours destacados para que aproveches al máximo tu tiempo en Paracas.</p>
-        </div>
-      </div>
+  <h3>Misión</h3>
+  <div class="card">Facilitar la planificación del viaje en Paracas mediante IA clara, confiable y personalizada.</div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1513161455079-7dc1de15ef3c?auto=format&fit=crop&w=800&q=80" alt="Plan personalizado">
-        <div class="card-content">
-          <h3>Plan Personalizado</h3>
-          <p>Tu plan se adapta automáticamente según tu presupuesto y tus intereses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h3>Visión</h3>
+  <div class="card">Ser líderes en asistencia turística inteligente en el Perú.</div>
 
-  <!-- AGENTE IA -->
-  <section id="ia">
-    <h2 class="section-title">Asistente Inteligente</h2>
-    <div class="ia-box">
-      <h3>Habla con nuestra IA</h3>
-      <p>Haz preguntas sobre tu viaje y obtén un plan personalizado al instante.</p>
+  <h3>Objetivos</h3>
+  <div class="card">✔ Automatizar la planificación turística</div>
+  <div class="card">✔ Ofrecer información precisa y actualizada</div>
+  <div class="card">✔ Impulsar el turismo local</div>
+  <div class="card">✔ Expandir el servicio a todo el país</div>
+</section>
 
-      <!-- Inserta tu script de agente IA aquí -->
-      <script>
-        window.chtlConfig = {
-            agentId: "TU_AGENT_ID_AQUI",
-            apiBaseUrl: "https://api.promptscript.dev"
-        };
-      </script>
-      <script async src="https://widget.promptscript.dev/chat-widget.js"></script>
+<footer>
+  © 2025 Tinkuy Ñawi - Plataforma de Turismo Inteligente
+</footer>
 
-    </div>
-  </section>
+<!-- CHAT IA CONECTADO A MAKE -->
+<div id="chatContainer">
+  <div id="chatBox"></div>
 
-  <!-- MISIÓN -->
-  <section id="mision" class="section">
-    <h2 class="section-title">Misión</h2>
-    <p class="text-block">
-      Nuestra misión es ofrecer una plataforma inteligente y accesible para planificar viajes en Paracas,
-      brindando información confiable, automática y personalizada para que cada visitante tenga
-      una experiencia completa y memorable.
-    </p>
-  </section>
+  <input id="userInput" type="text" placeholder="Escribe tu mensaje...">
+  <button onclick="handleSendMessage()">Enviar</button>
+</div>
 
-  <!-- VISIÓN -->
-  <section id="vision" class="section">
-    <h2 class="section-title">Visión</h2>
-    <p class="text-block">
-      Aspiramos a ser la plataforma líder de asistencia turística con IA en el Perú y otros destinos,
-      promoviendo un turismo moderno, responsable e inspirado en la tecnología.
-    </p>
-  </section>
+<script>
+  async function sendMessageToMake(userMessage) {
+    const response = await fetch("https://hook.us2.make.com/qxvsx8yn2mlt7psqy6743ae0b3yvyece", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ message: userMessage })
+    });
 
-  <!-- OBJETIVOS -->
-  <section id="objetivos" class="section">
-    <h2 class="section-title">Objetivos
+    const data = await response.json();
+    return data.reply ?? "Estoy procesando tu respuesta...";
+  }
+
+  async function handleSendMessage() {
+    const input = document.getElementById("userInput");
+    const chat = document.getElementById("chatBox");
+
+    const userText = input.value;
+    if (!userText) return;
+
+    chat.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
+    input.value = "";
+
+    const bot = await sendMessageToMake(userText);
+    chat.innerHTML += `<p><strong>Tinkuy Ñawi:</strong> ${bot}</p>`;
+
+    chat.scrollTop = chat.scrollHeight;
+  }
+</script>
+
+</body>
+</html>
