@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinkuy Awi – Chat IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BOTÓN FLOTANTE -->
+    <div id="chat-button">
+        💬
+    </div>
+
+    <!-- VENTANA DE CHAT -->
+    <div id="chat-window" class="hidden">
+        <div class="chat-header">
+            <h3>Asesor IA – Tinkuy Awi</h3>
+            <span id="close-chat">✖</span>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <div class="message bot">
+                ¡Hola! Soy tu Asesor de Viajes IA de <b>Tinkuy Awi</b> ✨<br><br>
+                ¿Listo para planear tu viaje perfecto a Paracas?<br><br>
+                Solo dime:<br>
+                • Días de viaje<br>
+                • Presupuesto<br>
+                • Tipo de experiencia (Relax, Aventura, Romántico)<br><br>
+                Y preparo itinerarios económicos y premium al instante 🌴✨
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Escribe aquí...">
+            <button id="send-btn">Enviar</button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* BOTÓN FLOTANTE */
+#chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #7a00d4;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+#chat-button:hover {
+    transform: scale(1.1);
+}
+
+/* VENTANA DE CHAT */
+#chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.chat-header {
+    background: #7a00d4;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-box {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8f2ff;
+}
+
+.message {
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin: 10px 0;
+    max-width: 80%;
+}
+
+.bot {
+    background: #ead9ff;
+    color: #3d0b73;
+}
+
+.user {
+    background: #c9b4ff;
+    color: #23005c;
+    margin-left: auto;
+}
+
+/* INPUT */
+.chat-input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+#send-btn {
+    background: #7a00d4;
+    color: white;
+    border: none;
+    width: 75px;
+    cursor: pointer;
+}
+// Mostrar / ocultar chat
+document.getElementById("chat-button").onclick = function() {
+    document.getElementById("chat-window").classList.remove("hidden");
+};
+
+document.getElementById("close-chat").onclick = function() {
+    document.getElementById("chat-window").classList.add("hidden");
+};
+
+// Enviar mensajes
+document.getElementById("send-btn").onclick = sendMessage;
+document.getElementById("user-input").addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+    const input = document.getElementById("user-input");
+    const text = input.value.trim();
+    if (text === "") return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    fetch("https://hook.us2.make.com/o24vlxj2e1lwr7kf68n1nsbg24uiywq4", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ message: text })
+    })
+    .then(res => res.json())
+    .then(data => {
+        addMessage(data.reply, "bot");
+    })
+    .catch(() => {
+        addMessage("Hubo un error al conectar con el agente IA.", "bot");
+    });
+}
+
+function addMessage(text, sender) {
+    const box = document.getElementById("chat-box");
+    const msg = document.createElement("div");
+    msg.classList.add("message", sender);
+    msg.innerHTML = text;
+    box.appendChild(msg);
+    box.scrollTop = box.scrollHeight;
+}
+
+  
+  
