@@ -78,6 +78,7 @@
       border-radius: 14px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       margin-bottom: 20px;
+      line-height: 1.6;
     }
 
     footer {
@@ -127,15 +128,6 @@
       cursor: pointer;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes fadeUp {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
   </style>
 </head>
 
@@ -164,7 +156,7 @@
   <h3>¿Qué ofrece nuestro Agente IA?</h3>
 
   <div class="card">✔ Itinerario automático con tiempos reales</div>
-  <div class="card">✔ Recomendaciones de comida (marina, criolla, vegana)</div>
+  <div class="card">✔ Recomendaciones de comida marina, criolla o vegana</div>
   <div class="card">✔ Hoteles según presupuesto</div>
   <div class="card">✔ Tours y experiencias en Paracas</div>
   <div class="card">✔ Plan 100% personalizado</div>
@@ -182,6 +174,97 @@
   <div class="card">✔ Expandir el servicio a todo el país</div>
 </section>
 
+<!-- ========================= -->
+<!--   NUEVAS SECCIONES        -->
+<!-- ========================= -->
+
+<section>
+
+  <h3>Explora Perú</h3>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1508264165352-258a6c6a3c2a?auto=format&fit=crop&w=900&q=80" style="width:100%; border-radius:12px;">
+    <p>Atardecer en Paracas – uno de los destinos más hermosos de la costa peruana.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1502767089025-6572583495b0?auto=format&fit=crop&w=900&q=80" style="width:100%; border-radius:12px;">
+    <p>Miraflores, Lima – centro gastronómico y turístico del Perú.</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1501441858152-291ed0d76454?auto=format&fit=crop&w=900&q=80" style="width:100%; border-radius:12px;">
+    <p>Costa peruana – playas, fauna marina y paisajes únicos.</p>
+  </div>
+
+
+  <h3>Propuesta de Valor</h3>
+
+  <div class="card">
+    <strong>¿Qué necesidad solventamos?</strong><br><br>
+    Solventamos la necesidad de los turistas de acceder a información confiable,
+    en su idioma, actualizada y adaptada a su presupuesto. También apoyamos a los negocios
+    locales a ganar visibilidad ante los visitantes.
+  </div>
+
+  <div class="card">
+    <strong>¿Qué problema resolvemos?</strong><br><br>
+    Muchos turistas llegan sin saber qué tours hacer, dónde comer o cómo organizar
+    su tiempo. Esto los hace perder experiencias y dinero. Nuestra plataforma soluciona todo eso.
+  </div>
+
+  <div class="card">
+    <strong>¿Qué valor ofrecemos?</strong><br><br>
+    ✔ Plan gratuito: información, traductor y comparador de precios.<br>
+    ✔ Asistente IA: itinerarios personalizados.<br>
+    ✔ Plan premium: itinerarios diarios + descuentos.<br>
+    ✔ Para negocios: promoción directa a turistas.
+  </div>
+
+
+  <h3>Socios Clave</h3>
+
+  <div class="card">
+    ✔ Restaurantes, cafés y bares<br>
+    ✔ Empresas de tours<br>
+    ✔ Hoteles y alojamientos<br>
+    ✔ Agencias de transporte<br>
+    ✔ Proveedores de tecnología<br>
+    ✔ Plataformas de pago<br>
+    ✔ Influencers y creadores de contenido<br>
+    ✔ Municipalidades y asociaciones de turismo
+  </div>
+
+
+  <h3>Actividades Clave</h3>
+
+  <div class="card">
+    <strong>01 – Desarrollo y mantenimiento</strong><br>
+    Garantizar que la app y el asistente IA funcionen siempre.
+  </div>
+
+  <div class="card">
+    <strong>02 – Actualización de datos</strong><br>
+    Tours, precios, eventos, restaurantes y experiencias.
+  </div>
+
+  <div class="card">
+    <strong>03 – Creación de contenido</strong><br>
+    Reseñas, fotos, videos, itinerarios, artículos.
+  </div>
+
+  <div class="card">
+    <strong>04 – Alianzas locales</strong><br>
+    Promociones y beneficios para negocios.
+  </div>
+
+  <div class="card">
+    <strong>05 – Marketing y soporte</strong><br>
+    Redes sociales, atención al usuario y puntos QR turísticos.
+  </div>
+
+</section>
+
 <footer>
   © 2025 Tinkuy Ñawi - Plataforma de Turismo Inteligente
 </footer>
@@ -189,7 +272,6 @@
 <!-- CHAT IA -->
 <div id="chatContainer">
   <div id="chatBox"></div>
-
   <input id="userInput" type="text" placeholder="Escribe tu mensaje...">
   <button onclick="handleSendMessage()">Enviar</button>
 </div>
