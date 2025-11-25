@@ -186,7 +186,7 @@
   © 2025 Tinkuy Ñawi - Plataforma de Turismo Inteligente
 </footer>
 
-<!-- CHAT IA CONECTADO A MAKE -->
+<!-- CHAT IA -->
 <div id="chatContainer">
   <div id="chatBox"></div>
 
@@ -195,15 +195,17 @@
 </div>
 
 <script>
+  const hookURL = "https://hook.us2.make.com/o24vlxj2e1lwr7kf68n1nsbg24uiywq4";
+
   async function sendMessageToMake(userMessage) {
-    const response = await fetch("https://hook.us2.make.com/o24vlxj2e1lwr7kf68n1nsbg24uiywq4", {
+    const response = await fetch(hookURL, {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ message: userMessage })
+      body: JSON.stringify({ text: userMessage })
     });
 
     const data = await response.json();
-    return data.reply ?? "Estoy procesando tu respuesta...";
+    return data.reply;
   }
 
   async function handleSendMessage() {
