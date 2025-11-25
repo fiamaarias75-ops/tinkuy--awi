@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Mejorado - Tinkuy Ñawi</title>
+  <title>Tinkuy Ñawi - Turismo Inteligente</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -14,35 +14,115 @@
       color: #222;
     }
 
-    /* ============ CHAT BURBUJAS + DARK MODE ============ */
-    #chatContainer {
+    header {
+      background: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+    }
+
+    .hero-text {
+      width: 50%;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero-text h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    .hero img {
+      width: 45%;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    section {
+      padding: 70px 60px;
+    }
+
+    h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #111;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* ======================= CHAT MEJORADO ======================= */
+    #chatWidgetBtn {
       position: fixed;
       bottom: 20px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    #chatContainer {
+      position: fixed;
+      bottom: 80px;
       right: 20px;
       width: 340px;
       background: #ffffff;
       border-radius: 18px;
       box-shadow: 0 12px 35px rgba(0,0,0,0.20);
-      display: flex;
+      display: none;
       flex-direction: column;
       overflow: hidden;
-      transition: background 0.3s ease;
-    }
-
-    /* Modo oscuro */
-    .dark #chatContainer {
-      background: #1e1e1e;
-      color: #f1f1f1;
     }
 
     #chatHeader {
       background: #111;
       color: white;
       padding: 14px 16px;
-      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 600;
     }
 
     #chatHeader img {
@@ -52,7 +132,7 @@
     }
 
     #chatBox {
-      height: 280px;
+      height: 260px;
       overflow-y: auto;
       padding: 12px;
       display: flex;
@@ -61,11 +141,6 @@
       background: #f5f5f5;
     }
 
-    .dark #chatBox {
-      background: #2b2b2b;
-    }
-
-    /* Burbujas */
     .bubble {
       max-width: 80%;
       padding: 10px 14px;
@@ -88,12 +163,7 @@
       border-bottom-left-radius: 2px;
     }
 
-    .dark .botBubble {
-      background: #3a3a3a;
-      color: #f1f1f1;
-    }
-
-    /* Escribiendo */
+    /* Indicador "escribiendo" */
     .typing {
       display: flex;
       gap: 5px;
@@ -102,9 +172,6 @@
       border-radius: 12px;
       width: fit-content;
       animation: fadeIn 0.3s ease;
-    }
-    .dark .typing {
-      background: #3a3a3a;
     }
     .dot {
       width: 8px;
@@ -129,10 +196,6 @@
       background: #fff;
     }
 
-    .dark #chatInputArea {
-      background: #1e1e1e;
-    }
-
     #userInput {
       flex: 1;
       padding: 10px;
@@ -149,82 +212,84 @@
       cursor: pointer;
       font-weight: 600;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
 
 <body>
 
-<div id="chatContainer">
-  <div id="chatHeader">
-    <img src="https://i.imgur.com/4AiXzf8.jpeg" />
-    Tinkuy Ñawi
+<header>
+  <h1 class="text-4xl font-bold mb-4 text-white">Tinkuy Ñawi</h1>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h2>Turismo Inteligente en Paracas</h2>
+    <p>Planifica tu viaje como nunca antes. Con ayuda de nuestro agente IA, obtén itinerarios, recomendaciones y rutas en segundos.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80" />
+</section>
+
+<section>
+  <h3>Quiénes Somos</h3>
+  <div class="card">
+    Somos una empresa creada en Paracas, dedicada a desarrollar soluciones innovadoras para mejorar la experiencia turística.
   </div>
 
+  <h3>¿Qué ofrece nuestro Agente IA?</h3>
+  <div class="card">✔ Itinerario automático con tiempos reales</div>
+  <div class="card">✔ Recomendaciones gastronómicas</div>
+  <div class="card">✔ Hoteles según presupuesto</div>
+  <div class="card">✔ Tours y experiencias en Paracas</div>
+  <div class="card">✔ Plan 100% personalizado</div>
+
+  <h3>Misión</h3>
+  <div class="card">Facilitar la planificación del viaje en Paracas mediante IA clara, confiable y personalizada.</div>
+
+  <h3>Visión</h3>
+  <div class="card">Ser líderes en asistencia turística inteligente en el Perú.</div>
+
+  <h3>Objetivos</h3>
+  <div class="card">✔ Automatizar la planificación turística</div>
+  <div class="card">✔ Ofrecer información precisa y actualizada</div>
+  <div class="card">✔ Impulsar el turismo local</div>
+  <div class="card">✔ Expandir el servicio a todo el país</div>
+</section>
+
+<footer>
+  © 2025 Tinkuy Ñawi - Plataforma de Turismo Inteligente
+</footer>
+
+<!-- ===================== BOTÓN Y CHAT ===================== -->
+<div id="chatWidgetBtn" onclick="toggleChat()">Chat IA</div>
+
+<div id="chatContainer">
+  <div id="chatHeader">
+    <img src="https://i.imgur.com/4AiXzf8.jpeg" /> Tinkuy Ñawi
+  </div>
   <div id="chatBox"></div>
 
   <div id="chatInputArea">
-    <input id="userInput" type="text" placeholder="Escribe aquí..." />
-    <button id="sendBtn" onclick="handleSendMessage()">Enviar</button>
+    <input id="userInput" type="text" placeholder="Escribe tu mensaje..." />
+    <button id="sendBtn" onclick="handleSendMessage()">Enviar
+
+<!-- Sección adicional sobre Paracas -->
+<section class="paracas-info mt-6 p-4 bg-gray-800 rounded-2xl shadow-lg">
+  <h2 class="text-2xl font-bold mb-3 text-white">Descubre Paracas</h2>
+  <p class="text-gray-300 mb-4">Paracas es uno de los destinos turísticos más impresionantes del Perú, conocido por su Reserva Nacional, su biodiversidad marina y sus paisajes costeros que combinan desierto y mar. Es un lugar ideal para quienes buscan naturaleza, aventura y cultura.</p>
+
+  <ul class="list-disc ml-6 text-gray-300 mb-4">
+    <li>La Reserva Nacional de Paracas protege ecosistemas marinos y especies únicas.</li>
+    <li>Las Islas Ballestas son hogar de lobos marinos, pingüinos de Humboldt y aves guaneras.</li>
+    <li>El famoso Candelabro, un geoglifo milenario, se puede observar desde el mar.</li>
+  </ul>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+    <img class="rounded-xl shadow-md" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Islas_Ballestas%2C_Paracas%2C_Per%C3%BA%2C_2015-07-30%2C_DD_17.JPG" alt="Islas Ballestas en Paracas" />
+
+    <img class="rounded-xl shadow-md" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Reserva_Nacional_de_Paracas%2C_Per%C3%BA%2C_2015-07-30%2C_DD_06.JPG" alt="Reserva Nacional de Paracas" />
+
+    <img class="rounded-xl shadow-md" src="https://upload.wikimedia.org/wikipedia/commons/3/31/Candelabro_de_Paracas.jpg" alt="Candelabro de Paracas" />
+
+    <img class="rounded-xl shadow-md" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Playa_Roja_-_Reserva_Nacional_de_Paracas.jpg" alt="Playa Roja Paracas" />
   </div>
-</div>
-
-<script>
-  function addBubble(text, type) {
-    const chat = document.getElementById("chatBox");
-    const bubble = document.createElement("div");
-    bubble.className = `bubble ${type}`;
-    bubble.textContent = text;
-    chat.appendChild(bubble);
-    chat.scrollTop = chat.scrollHeight;
-  }
-
-  function showTyping() {
-    const chat = document.getElementById("chatBox");
-    const typing = document.createElement("div");
-    typing.id = "typingIndicator";
-    typing.className = "typing";
-    typing.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
-    chat.appendChild(typing);
-    chat.scrollTop = chat.scrollHeight;
-  }
-
-  function hideTyping() {
-    const t = document.getElementById("typingIndicator");
-    if (t) t.remove();
-  }
-
-  async function sendMessageToMake(message) {
-    const res = await fetch("https://hook.us2.make.com/o24vlxj2e1lwr7kf68n1nsbg24uiywq4", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message })
-    });
-
-    const data = await res.json();
-    return data.reply ?? "Estoy procesando tu respuesta...";
-  }
-
-  async function handleSendMessage() {
-    const input = document.getElementById("userInput");
-    const text = input.value.trim();
-    if (!text) return;
-
-    addBubble(text, "userBubble");
-    input.value = "";
-
-    showTyping();
-
-    const reply = await sendMessageToMake(text);
-
-    hideTyping();
-    addBubble(reply, "botBubble");
-  }
-</script>
-
-</body>
-</html>
+</section>
