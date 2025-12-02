@@ -2,10 +2,10 @@ const chatForm = document.querySelector('#chat-form');
 const chatInput = document.querySelector('#chat-input');
 const chatWindow = document.querySelector('#chat-window');
 
-// Webhook real de Make
+// Webhook real
 const WEBHOOK_URL = 'https://hook.us2.make.com/dcmpza5w9c9my3pp6xps8i7o8vnyelfq';
 
-// ID de hilo para mantener la conversación
+// Mantener hilo de conversación
 let threadId = 'paracas_bot_thread';
 
 chatForm.addEventListener('submit', async (e) => {
@@ -24,8 +24,8 @@ chatForm.addEventListener('submit', async (e) => {
     const response = await fetch(WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        prompt: userMessage,
+      body: JSON.stringify({
+        messages: [{ role: "user", content: userMessage }],
         threadId: threadId
       })
     });
@@ -33,10 +33,9 @@ chatForm.addEventListener('submit', async (e) => {
     const result = await response.json();
     const botMessage = result.reply || 'No hay respuesta del bot.';
 
-    // Actualizar threadId si Make lo devuelve
     if (result.threadId) threadId = result.threadId;
 
-    // Reemplazar mensaje temporal con la respuesta real
+    // Actualizar mensaje temporal con la respuesta real
     typingMessage.textContent = botMessage;
     typingMessage.classList.remove('temp-message');
     chatWindow.scrollTop = chatWindow.scrollHeight;
@@ -48,12 +47,11 @@ chatForm.addEventListener('submit', async (e) => {
   }
 });
 
-// Función para agregar mensajes al chat
 function addMessage(text, className) {
   const msgDiv = document.createElement('div');
   msgDiv.classList.add('message', className);
   msgDiv.textContent = text;
   chatWindow.appendChild(msgDiv);
   chatWindow.scrollTop = chatWindow.scrollHeight;
-  return msgDiv; // Devuelve el div para poder actualizarlo
+  return msgDiv;
 }
