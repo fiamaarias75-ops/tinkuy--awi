@@ -5,111 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tinkuy Ñawi - Turismo Inteligente en Paracas</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Tinkuy Ñawi</h1>
-      <p>Turismo Inteligente en Paracas</p>
+      <p class="subtitle">Turismo Inteligente en Paracas</p>
       <p>Planifica tu viaje como nunca antes. Con ayuda de nuestro agente IA, obtén itinerarios, recomendaciones y rutas en segundos.</p>
     </div>
   </header>
 
-  <section id="quienes-somos" class="container">
+  <!-- Información corporativa -->
+  <section id="quienes-somos" class="container card">
     <h2>Quiénes Somos</h2>
     <p>Somos una empresa creada en Paracas, dedicada a desarrollar soluciones innovadoras para mejorar la experiencia turística. Nuestro agente IA crea planes completos según tu presupuesto: itinerarios, restaurantes, rutas, tiempos y recomendaciones reales.</p>
   </section>
 
-  <section id="agente-ia" class="container">
+  <section id="agente-ia" class="container card">
     <h2>¿Qué ofrece nuestro Agente IA?</h2>
     <ul>
-      <li>✔ Itinerario automático con tiempos reales</li>
-      <li>✔ Recomendaciones de comida marina, criolla o vegana</li>
-      <li>✔ Hoteles según presupuesto</li>
-      <li>✔ Tours y experiencias en Paracas</li>
-      <li>✔ Plan 100% personalizado</li>
+      <li>Itinerario automático con tiempos reales</li>
+      <li>Recomendaciones de comida marina, criolla o vegana</li>
+      <li>Hoteles según presupuesto</li>
+      <li>Tours y experiencias en Paracas</li>
+      <li>Plan 100% personalizado</li>
     </ul>
   </section>
 
-  <section id="mision-vision" class="container">
-    <h2>Misión</h2>
-    <p>Facilitar la planificación del viaje en Paracas mediante IA clara, confiable y personalizada.</p>
-    <h2>Visión</h2>
-    <p>Ser líderes en asistencia turística inteligente en el Perú.</p>
-    <h2>Objetivos</h2>
-    <ul>
-      <li>✔ Automatizar la planificación turística</li>
-      <li>✔ Ofrecer información precisa y actualizada</li>
-      <li>✔ Impulsar el turismo local</li>
-      <li>✔ Expandir el servicio a todo el país</li>
-    </ul>
-  </section>
-
-  <section id="explora-peru" class="container">
-    <h2>Explora Perú</h2>
-    <div class="imagenes">
-      <img src="paracas1.jpg" alt="Acantilados y playa de Paracas">
-      <img src="paracas2.jpg" alt="Barcos turísticos en formaciones rocosas">
-      <img src="paracas3.jpg" alt="Playa Roja de Paracas">
-      <img src="paracas4.jpg" alt="Lobo marino en las Islas Ballestas">
-      <img src="paracas5.jpg" alt="Pelícanos peruanos en la costa">
+  <section id="paracas-chat" class="container card">
+    <h2>Habla con PARACAS BOT</h2>
+    <div id="chat-window">
+      <div class="bot-message message">¡Hola! Soy PARACAS BOT 🤖. Para comenzar, dime tu presupuesto aproximado para el viaje.</div>
     </div>
-  </section>
-
-  <section id="propuesta-valor" class="container">
-    <h2>Propuesta de Valor</h2>
-    <p><strong>¿Qué necesidad solventamos?</strong></p>
-    <p>Solventamos la necesidad de los turistas de acceder a información confiable, en su idioma, actualizada y adaptada a su presupuesto. También apoyamos a los negocios locales a ganar visibilidad ante los visitantes.</p>
-
-    <p><strong>¿Qué problema resolvemos?</strong></p>
-    <p>Muchos turistas llegan sin saber qué tours hacer, dónde comer o cómo organizar su tiempo. Esto los hace perder experiencias y dinero. Nuestra plataforma soluciona todo eso.</p>
-
-    <p><strong>¿Qué valor ofrecemos?</strong></p>
-    <ul>
-      <li>✔ Plan gratuito: información, traductor y comparador de precios.</li>
-      <li>✔ Asistente IA: itinerarios personalizados.</li>
-      <li>✔ Plan premium: itinerarios diarios + descuentos.</li>
-      <li>✔ Para negocios: promoción directa a turistas.</li>
-    </ul>
-  </section>
-
-  <section id="paracas-bot" class="container">
-    <h2>Planifica tu viaje con PARACAS BOT</h2>
-    <form id="itineraryForm">
-      <label>Presupuesto total o por persona (S/):</label>
-      <input type="number" id="presupuesto" required>
-
-      <label>Días de viaje:</label>
-      <input type="number" id="dias" required>
-
-      <label>Tipo de experiencia:</label>
-      <select id="experiencia" required>
-        <option value="relajante">Relajante</option>
-        <option value="aventurera">Aventurera</option>
-        <option value="mixta">Mixta</option>
-      </select>
-
-      <label>Viajarás con:</label>
-      <select id="compania" required>
-        <option value="solo">Solo</option>
-        <option value="pareja">Pareja</option>
-        <option value="amigos">Amigos</option>
-        <option value="familia">Familia</option>
-      </select>
-
-      <label>Fechas aproximadas del viaje:</label>
-      <input type="text" id="fechas" placeholder="Ej: 10-15 Dic 2025" required>
-
-      <label>Intereses (separados por coma):</label>
-      <input type="text" id="intereses" placeholder="Islas Ballestas, playas, gastronomía..." required>
-
-      <label>Email (opcional para recibir itinerario):</label>
-      <input type="email" id="email" placeholder="tu@email.com">
-
-      <button type="submit">Generar Itinerario</button>
+    <form id="chat-form">
+      <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off" required>
+      <button type="submit">Enviar</button>
     </form>
-
-    <div id="resultado"></div>
   </section>
 
   <script src="script.js"></script>
