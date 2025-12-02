@@ -16,8 +16,9 @@ header {
 header h1,
 header .subtitle,
 header p {
-  color: #008B8B; /* celeste oscuro */
+  color: #1E90FF; /* azul */
 }
+
 
 header .subtitle,
 header p {
