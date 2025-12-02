@@ -8,7 +8,7 @@ body {
 
 header {
   background: linear-gradient(90deg, #00BFFF, #00CED1); /* degradado celeste */
-  color: #FFFFFF;
+  color: #FFFFFF; /* texto blanco */
   padding: 50px 20px;
   text-align: center;
 }
@@ -16,14 +16,14 @@ header {
 header h1 {
   margin: 0;
   font-size: 2.5em;
-  color: #E0F7FA; /* celeste claro */
+  color: #FFFFFF; /* título blanco */
 }
 
-header .subtitle {
-  font-size: 1.2em;
-  margin: 10px 0;
-  color: #E0F7FA;
+header .subtitle,
+header p {
+  color: #E0F7FA; /* subtítulos y párrafo celeste claro */
 }
+
 
 .container {
   max-width: 900px;
