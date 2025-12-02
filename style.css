@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -7,26 +7,34 @@ body {
 }
 
 header {
-  background: #FF6B00;
+  background: linear-gradient(90deg, #FF6B00, #FFA500);
   color: white;
-  padding: 30px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
 header h1 {
   margin: 0;
+  font-size: 2.5em;
+}
+
+header .subtitle {
+  font-size: 1.2em;
+  margin: 10px 0;
 }
 
 .container {
   max-width: 900px;
   margin: 30px auto;
-  padding: 20px;
+  padding: 25px;
   background: white;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 h2 {
   color: #FF6B00;
+  margin-bottom: 15px;
 }
 
 ul {
@@ -39,47 +47,83 @@ ul li::before {
   color: #FF6B00;
 }
 
-.imagenes {
+.card {
+  margin-bottom: 30px;
+}
+
+/* Chat */
+#chat-window {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  margin-bottom: 15px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background: #FF6B00;
+  color: white;
+  text-align: right;
+  margin-left: auto;
+}
+
+.bot-message {
+  background: #e9f7ef;
+  color: #333;
+  text-align: left;
+  margin-right: auto;
+}
+
+#chat-form {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
-.imagenes img {
-  width: calc(50% - 10px);
+#chat-input {
+  flex: 1;
+  padding: 10px;
   border-radius: 8px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-}
-
-form input, form select, form button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 1em;
 }
 
-form button {
+#chat-input:focus {
+  outline: none;
+  border-color: #FF6B00;
+}
+
+#chat-form button {
+  padding: 10px 20px;
   background: #FF6B00;
   color: white;
   border: none;
-  margin-top: 20px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-form button:hover {
+#chat-form button:hover {
   background: #e55b00;
 }
 
-#resultado {
-  margin-top: 30px;
-  background: #e9f7ef;
-  padding: 15px;
-  border-radius: 8px;
-  white-space: pre-line;
-}
+/* Responsive */
+@media (max-width: 768px) {
+  #chat-form {
+    flex-direction: column;
+  }
 
+  #chat-form button {
+    width: 100%;
+  }
+}
