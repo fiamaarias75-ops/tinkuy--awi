@@ -1,85 +1,34 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
+const form = document.querySelector('#itineraryForm');
+const resultado = document.querySelector('#resultado');
 
-header {
-  background: #FF6B00;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-}
+// Reemplaza con tu Webhook URL de Make
+const WEBHOOK_URL = 'TU_WEBHOOK_URL_DE_MAKE';
 
-header h1 {
-  margin: 0;
-}
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  resultado.textContent = 'Generando tu itinerario, por favor espera...';
 
-.container {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-}
+  const data = {
+    presupuesto: document.querySelector('#presupuesto').value,
+    dias: document.querySelector('#dias').value,
+    experiencia: document.querySelector('#experiencia').value,
+    compania: document.querySelector('#compania').value,
+    fechas: document.querySelector('#fechas').value,
+    intereses: document.querySelector('#intereses').value.split(',').map(i => i.trim()),
+    email: document.querySelector('#email').value
+  };
 
-h2 {
-  color: #FF6B00;
-}
+  try {
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li::before {
-  content: "✔ ";
-  color: #FF6B00;
-}
-
-.imagenes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.imagenes img {
-  width: calc(50% - 10px);
-  border-radius: 8px;
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-}
-
-form input, form select, form button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  background: #FF6B00;
-  color: white;
-  border: none;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #e55b00;
-}
-
-#resultado {
-  margin-top: 30px;
-  background: #e9f7ef;
-  padding: 15px;
-  border-radius: 8px;
-  white-space: pre-line;
-}
-
+    const result = await response.json();
+    resultado.textContent = result.itinerario || 'No se pudo generar el itinerario. Verifica los datos.';
+  } catch (error) {
+    console.error(error);
+    resultado.textContent = 'Error al conectar con PARACAS BOT. Intenta nuevamente.';
+  }
+});
