@@ -3,331 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tinkuy Ñawi - Turismo Inteligente</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: "Inter", sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
-
-    header {
-      background: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 80px 60px;
-      background: linear-gradient(to bottom, #fafafa, #f0f0f0);
-    }
-
-    .hero-text {
-      width: 50%;
-      animation: fadeIn 1s ease;
-    }
-
-    .hero-text h2 {
-      font-size: 48px;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .hero-text p {
-      font-size: 18px;
-      color: #444;
-    }
-
-    .hero img {
-      width: 45%;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    }
-
-    section {
-      padding: 70px 60px;
-    }
-
-    h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: #111;
-      color: white;
-      margin-top: 40px;
-    }
-
-    /* Chat IA */
-    #chatContainer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 330px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      animation: fadeUp 0.6s ease;
-    }
-
-    #chatBox {
-      height: 270px;
-      overflow-y: auto;
-      margin-bottom: 10px;
-      padding-right: 5px;
-    }
-
-    #chatContainer input {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    #chatContainer button {
-      padding: 10px;
-      border: none;
-      background: black;
-      color: white;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-  </style>
+  <title>Tinkuy Ñawi - Turismo Inteligente en Paracas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header>
+    <div class="container">
+      <h1>Tinkuy Ñawi</h1>
+      <p>Turismo Inteligente en Paracas</p>
+      <p>Planifica tu viaje como nunca antes. Con ayuda de nuestro agente IA, obtén itinerarios, recomendaciones y rutas en segundos.</p>
+    </div>
+  </header>
 
-<header>
-  <h1>Tinkuy Ñawi</h1>
-</header>
+  <section id="quienes-somos" class="container">
+    <h2>Quiénes Somos</h2>
+    <p>Somos una empresa creada en Paracas, dedicada a desarrollar soluciones innovadoras para mejorar la experiencia turística. Nuestro agente IA crea planes completos según tu presupuesto: itinerarios, restaurantes, rutas, tiempos y recomendaciones reales.</p>
+  </section>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Turismo Inteligente en Paracas</h2>
-    <p>Planifica tu viaje como nunca antes. Con ayuda de nuestro agente IA, obtén itinerarios, recomendaciones y rutas en segundos.</p>
-  </div>
+  <section id="agente-ia" class="container">
+    <h2>¿Qué ofrece nuestro Agente IA?</h2>
+    <ul>
+      <li>✔ Itinerario automático con tiempos reales</li>
+      <li>✔ Recomendaciones de comida marina, criolla o vegana</li>
+      <li>✔ Hoteles según presupuesto</li>
+      <li>✔ Tours y experiencias en Paracas</li>
+      <li>✔ Plan 100% personalizado</li>
+    </ul>
+  </section>
 
-  <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80">
-</section>
+  <section id="mision-vision" class="container">
+    <h2>Misión</h2>
+    <p>Facilitar la planificación del viaje en Paracas mediante IA clara, confiable y personalizada.</p>
+    <h2>Visión</h2>
+    <p>Ser líderes en asistencia turística inteligente en el Perú.</p>
+    <h2>Objetivos</h2>
+    <ul>
+      <li>✔ Automatizar la planificación turística</li>
+      <li>✔ Ofrecer información precisa y actualizada</li>
+      <li>✔ Impulsar el turismo local</li>
+      <li>✔ Expandir el servicio a todo el país</li>
+    </ul>
+  </section>
 
-<section>
-  <h3>Quiénes Somos</h3>
-  <div class="card">
-    Somos una empresa creada en Paracas, dedicada a desarrollar soluciones innovadoras para mejorar la experiencia turística.  
-    Nuestro agente IA crea planes completos según tu presupuesto: itinerarios, restaurantes, rutas, tiempos y recomendaciones reales.
-  </div>
+  <section id="explora-peru" class="container">
+    <h2>Explora Perú</h2>
+    <div class="imagenes">
+      <img src="paracas1.jpg" alt="Acantilados y playa de Paracas">
+      <img src="paracas2.jpg" alt="Barcos turísticos en formaciones rocosas">
+      <img src="paracas3.jpg" alt="Playa Roja de Paracas">
+      <img src="paracas4.jpg" alt="Lobo marino en las Islas Ballestas">
+      <img src="paracas5.jpg" alt="Pelícanos peruanos en la costa">
+    </div>
+  </section>
 
-  <h3>¿Qué ofrece nuestro Agente IA?</h3>
+  <section id="propuesta-valor" class="container">
+    <h2>Propuesta de Valor</h2>
+    <p><strong>¿Qué necesidad solventamos?</strong></p>
+    <p>Solventamos la necesidad de los turistas de acceder a información confiable, en su idioma, actualizada y adaptada a su presupuesto. También apoyamos a los negocios locales a ganar visibilidad ante los visitantes.</p>
 
-  <div class="card">✔ Itinerario automático con tiempos reales</div>
-  <div class="card">✔ Recomendaciones de comida marina, criolla o vegana</div>
-  <div class="card">✔ Hoteles según presupuesto</div>
-  <div class="card">✔ Tours y experiencias en Paracas</div>
-  <div class="card">✔ Plan 100% personalizado</div>
+    <p><strong>¿Qué problema resolvemos?</strong></p>
+    <p>Muchos turistas llegan sin saber qué tours hacer, dónde comer o cómo organizar su tiempo. Esto los hace perder experiencias y dinero. Nuestra plataforma soluciona todo eso.</p>
 
-  <h3>Misión</h3>
-  <div class="card">Facilitar la planificación del viaje en Paracas mediante IA clara, confiable y personalizada.</div>
+    <p><strong>¿Qué valor ofrecemos?</strong></p>
+    <ul>
+      <li>✔ Plan gratuito: información, traductor y comparador de precios.</li>
+      <li>✔ Asistente IA: itinerarios personalizados.</li>
+      <li>✔ Plan premium: itinerarios diarios + descuentos.</li>
+      <li>✔ Para negocios: promoción directa a turistas.</li>
+    </ul>
+  </section>
 
-  <h3>Visión</h3>
-  <div class="card">Ser líderes en asistencia turística inteligente en el Perú.</div>
+  <section id="paracas-bot" class="container">
+    <h2>Planifica tu viaje con PARACAS BOT</h2>
+    <form id="itineraryForm">
+      <label>Presupuesto total o por persona (S/):</label>
+      <input type="number" id="presupuesto" required>
 
-  <h3>Objetivos</h3>
-  <div class="card">✔ Automatizar la planificación turística</div>
-  <div class="card">✔ Ofrecer información precisa y actualizada</div>
-  <div class="card">✔ Impulsar el turismo local</div>
-  <div class="card">✔ Expandir el servicio a todo el país</div>
-</section>
+      <label>Días de viaje:</label>
+      <input type="number" id="dias" required>
 
-<!-- ========================= -->
-<!--   NUEVAS SECCIONES        -->
-<!-- ========================= -->
+      <label>Tipo de experiencia:</label>
+      <select id="experiencia" required>
+        <option value="relajante">Relajante</option>
+        <option value="aventurera">Aventurera</option>
+        <option value="mixta">Mixta</option>
+      </select>
 
-<section>
+      <label>Viajarás con:</label>
+      <select id="compania" required>
+        <option value="solo">Solo</option>
+        <option value="pareja">Pareja</option>
+        <option value="amigos">Amigos</option>
+        <option value="familia">Familia</option>
+      </select>
 
-  <h3>Explora Perú</h3>
+      <label>Fechas aproximadas del viaje:</label>
+      <input type="text" id="fechas" placeholder="Ej: 10-15 Dic 2025" required>
 
-<section>
+      <label>Intereses (separados por coma):</label>
+      <input type="text" id="intereses" placeholder="Islas Ballestas, playas, gastronomía..." required>
 
-  <h3>Explora Perú</h3>
+      <label>Email (opcional para recibir itinerario):</label>
+      <input type="email" id="email" placeholder="tu@email.com">
 
-<section>
+      <button type="submit">Generar Itinerario</button>
+    </form>
 
-  <h3>Explora Perú</h3>
+    <div id="resultado"></div>
+  </section>
 
-  <div class="card">
-    <img src="/mnt/data/c9248fdc-fc14-4029-886d-a190c7bd6f9f.png" style="width:100%; border-radius:12px;">
-    <p>Acantilados y playa de Paracas con aguas azul turquesa.</p>
-  </div>
-
-  <div class="card">
-    <img src="/mnt/data/b80b6369-62d5-4ba9-8130-4292328ffe68.png" style="width:100%; border-radius:12px;">
-    <p>Barcos turísticos navegando frente a formaciones rocosas.</p>
-  </div>
-
-  <div class="card">
-    <img src="/mnt/data/47e20e61-b897-42c5-9ee8-985fe32866e8.png" style="width:100%; border-radius:12px;">
-    <p>Playa Roja de Paracas, famosa por su arena rojiza única.</p>
-  </div>
-
-  <div class="card">
-    <img src="/mnt/data/286a454f-3d59-4c65-bb90-2a983a259f12.png" style="width:100%; border-radius:12px;">
-    <p>Lobo marino descansando sobre una roca en las Islas Ballestas.</p>
-  </div>
-
-  <div class="card">
-    <img src="/mnt/data/ddfa4be4-d873-4a01-bf0c-d2733360bea6.png" style="width:100%; border-radius:12px;">
-    <p>Pelícanos peruanos posados sobre rocas en la costa.</p>
-  </div>
-
-</section>
-
-
-
-
-  <h3>Propuesta de Valor</h3>
-
-  <div class="card">
-    <strong>¿Qué necesidad solventamos?</strong><br><br>
-    Solventamos la necesidad de los turistas de acceder a información confiable,
-    en su idioma, actualizada y adaptada a su presupuesto. También apoyamos a los negocios
-    locales a ganar visibilidad ante los visitantes.
-  </div>
-
-  <div class="card">
-    <strong>¿Qué problema resolvemos?</strong><br><br>
-    Muchos turistas llegan sin saber qué tours hacer, dónde comer o cómo organizar
-    su tiempo. Esto los hace perder experiencias y dinero. Nuestra plataforma soluciona todo eso.
-  </div>
-
-  <div class="card">
-    <strong>¿Qué valor ofrecemos?</strong><br><br>
-    ✔ Plan gratuito: información, traductor y comparador de precios.<br>
-    ✔ Asistente IA: itinerarios personalizados.<br>
-    ✔ Plan premium: itinerarios diarios + descuentos.<br>
-    ✔ Para negocios: promoción directa a turistas.
-  </div>
-
-
-  <h3>Socios Clave</h3>
-
-  <div class="card">
-    ✔ Restaurantes, cafés y bares<br>
-    ✔ Empresas de tours<br>
-    ✔ Hoteles y alojamientos<br>
-    ✔ Agencias de transporte<br>
-    ✔ Proveedores de tecnología<br>
-    ✔ Plataformas de pago<br>
-    ✔ Influencers y creadores de contenido<br>
-    ✔ Municipalidades y asociaciones de turismo
-  </div>
-
-
-  <h3>Actividades Clave</h3>
-
-  <div class="card">
-    <strong>01 – Desarrollo y mantenimiento</strong><br>
-    Garantizar que la app y el asistente IA funcionen siempre.
-  </div>
-
-  <div class="card">
-    <strong>02 – Actualización de datos</strong><br>
-    Tours, precios, eventos, restaurantes y experiencias.
-  </div>
-
-  <div class="card">
-    <strong>03 – Creación de contenido</strong><br>
-    Reseñas, fotos, videos, itinerarios, artículos.
-  </div>
-
-  <div class="card">
-    <strong>04 – Alianzas locales</strong><br>
-    Promociones y beneficios para negocios.
-  </div>
-
-  <div class="card">
-    <strong>05 – Marketing y soporte</strong><br>
-    Redes sociales, atención al usuario y puntos QR turísticos.
-  </div>
-
-</section>
-
-<footer>
-  © 2025 Tinkuy Ñawi - Plataforma de Turismo Inteligente
-</footer>
-
-<!-- CHAT IA -->
-<div id="chatContainer">
-  <div id="chatBox"></div>
-  <input id="userInput" type="text" placeholder="Escribe tu mensaje...">
-  <button onclick="handleSendMessage()">Enviar</button>
-</div>
-
-<script>
-  const hookURL = "https://hook.us2.make.com/o24vlxj2e1lwr7kf68n1nsbg24uiywq4";
-
-  async function sendMessageToMake(userMessage) {
-    const response = await fetch(hookURL, {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ text: userMessage })
-    });
-
-    const data = await response.json();
-    return data.reply;
-  }
-
-  async function handleSendMessage() {
-    const input = document.getElementById("userInput");
-    const chat = document.getElementById("chatBox");
-
-    const userText = input.value;
-    if (!userText) return;
-
-    chat.innerHTML += `<p><strong>Tú:</strong> ${userText}</p>`;
-    input.value = "";
-
-    const bot = await sendMessageToMake(userText);
-    chat.innerHTML += `<p><strong>Tinkuy Ñawi:</strong> ${bot}</p>`;
-
-    chat.scrollTop = chat.scrollHeight;
-  }
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
